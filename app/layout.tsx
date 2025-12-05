@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import LiveChat from '@/components/LiveChat';
 import { Toaster } from 'react-hot-toast';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -32,6 +33,11 @@ export const metadata: Metadata = {
     description: 'Enterprise-grade AI automation, cloud engineering, and secure edge computing solutions.',
     images: ['https://nyc3.digitaloceanspaces.com/bhindi-drive/files/d70640e3-33b8-4c1f-881e-e47849dc14a8/2025-12-05T17-03-21-667Z-424819bd-chat-image-1764954201649-1.jpg'],
   },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+  },
 };
 
 export default function RootLayout({
@@ -43,12 +49,14 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/d70640e3-33b8-4c1f-881e-e47849dc14a8/2025-12-05T17-03-21-844Z-d10b8d3b-chat-image-1764954201824-2.jpg" />
+        <meta name="theme-color" content="#0a1628" />
       </head>
       <body className={inter.className}>
         <GoogleAnalytics />
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <LiveChat />
         <WhatsAppButton />
         <Toaster
           position="top-right"
