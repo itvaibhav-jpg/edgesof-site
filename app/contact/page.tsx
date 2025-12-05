@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { HiMail, HiPhone, HiLocationMarker, HiUser, HiOfficeBuilding } from 'react-icons/hi';
-import { FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
+import { FaLinkedin, FaTwitter, FaGithub, FaWhatsapp } from 'react-icons/fa';
 import toast from 'react-hot-toast';
 
 export default function Contact() {
@@ -47,14 +47,14 @@ export default function Contact() {
     {
       icon: HiMail,
       title: 'Email',
-      value: 'hello@edgesof.com',
-      link: 'mailto:hello@edgesof.com',
+      value: 'kumar@edgesof.com',
+      link: 'mailto:kumar@edgesof.com',
     },
     {
       icon: HiPhone,
       title: 'Phone',
-      value: '+91 80 1234 5678',
-      link: 'tel:+918012345678',
+      value: '+91 99994 56126',
+      link: 'tel:+919999456126',
     },
     {
       icon: HiLocationMarker,
@@ -68,6 +68,7 @@ export default function Contact() {
     { icon: FaLinkedin, link: 'https://linkedin.com/company/edgesof', name: 'LinkedIn' },
     { icon: FaTwitter, link: 'https://twitter.com/edgesof', name: 'Twitter' },
     { icon: FaGithub, link: 'https://github.com/edgesof', name: 'GitHub' },
+    { icon: FaWhatsapp, link: 'https://wa.me/919999456126', name: 'WhatsApp' },
   ];
 
   return (
@@ -80,19 +81,19 @@ export default function Contact() {
               Get In Touch
             </span>
           </div>
-          <h1 className="text-5xl sm:text-6xl font-bold">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold">
             <span className="text-white">Let's Build </span>
             <span className="text-gradient">Together</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
             Have a project in mind? We'd love to hear from you. Send us a message and 
             we'll respond within 24 hours.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Form */}
-          <div className="cyber-card p-8">
+          <div className="cyber-card p-6 sm:p-8">
             <h2 className="text-2xl font-bold text-white mb-6">Send us a message</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -143,7 +144,7 @@ export default function Contact() {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full pl-10 pr-4 py-3 bg-navy-dark border border-white/10 rounded-md text-white placeholder-gray-500 focus:outline-none focus:border-cyan-glow transition-colors"
-                    placeholder="+1 (555) 123-4567"
+                    placeholder="+91 99999 99999"
                   />
                 </div>
               </div>
@@ -191,8 +192,8 @@ export default function Contact() {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-8">
-            <div className="cyber-card p-8">
+          <div className="space-y-6 lg:space-y-8">
+            <div className="cyber-card p-6 sm:p-8">
               <h2 className="text-2xl font-bold text-white mb-6">Contact Information</h2>
               <div className="space-y-6">
                 {contactInfo.map((info, index) => {
@@ -207,7 +208,7 @@ export default function Contact() {
                         {info.link ? (
                           <a
                             href={info.link}
-                            className="text-white hover:text-cyan-glow transition-colors"
+                            className="text-white hover:text-cyan-glow transition-colors break-all"
                           >
                             {info.value}
                           </a>
@@ -221,9 +222,9 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="cyber-card p-8">
+            <div className="cyber-card p-6 sm:p-8">
               <h2 className="text-2xl font-bold text-white mb-6">Follow Us</h2>
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-4">
                 {socialLinks.map((social, index) => {
                   const Icon = social.icon;
                   return (
@@ -242,7 +243,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="cyber-card p-8 bg-gradient-to-br from-cyan-glow/5 to-aqua-bright/5">
+            <div className="cyber-card p-6 sm:p-8 bg-gradient-to-br from-cyan-glow/5 to-aqua-bright/5">
               <h3 className="text-xl font-bold text-white mb-4">
                 Schedule a Free Consultation
               </h3>
