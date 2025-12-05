@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { HiMenu, HiX, HiChevronDown } from 'react-icons/hi';
+import { HiMenu, HiX, HiChevronDown, HiPhone } from 'react-icons/hi';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,15 +35,17 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="relative w-12 h-12">
+            <div className="relative w-12 h-12 flex-shrink-0">
               <Image
-                src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/d70640e3-33b8-4c1f-881e-e47849dc14a8/2025-12-05T15-00-02-418Z-b4df9401-chat-image-1764946802397-0.jpg"
+                src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/d70640e3-33b8-4c1f-881e-e47849dc14a8/2025-12-05T17-03-21-844Z-d10b8d3b-chat-image-1764954201824-2.jpg"
                 alt="EdgesOf Solutions"
-                fill
+                width={48}
+                height={48}
                 className="object-contain"
+                priority
               />
             </div>
-            <div>
+            <div className="hidden sm:block">
               <div className="text-xl font-bold text-white group-hover:text-cyan-glow transition-colors">
                 EdgesOf
               </div>
@@ -86,8 +88,15 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
+          {/* CTA Buttons */}
+          <div className="hidden lg:flex items-center gap-3">
+            <a
+              href="tel:+919999456126"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors"
+            >
+              <HiPhone className="w-5 h-5" />
+              <span>+91 99994 56126</span>
+            </a>
             <Link
               href="/contact"
               className="px-6 py-2.5 bg-gradient-to-r from-cyan-glow to-aqua-bright text-navy-dark font-semibold rounded-md hover:shadow-lg hover:shadow-cyan-glow/50 transition-all text-sm"
@@ -135,6 +144,14 @@ export default function Navbar() {
                 )}
               </div>
             ))}
+            <a
+              href="tel:+919999456126"
+              className="flex items-center gap-2 px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              <HiPhone className="w-5 h-5" />
+              <span>+91 99994 56126</span>
+            </a>
             <Link
               href="/contact"
               className="block mt-4 px-6 py-2.5 bg-gradient-to-r from-cyan-glow to-aqua-bright text-navy-dark font-semibold rounded-md text-center"
