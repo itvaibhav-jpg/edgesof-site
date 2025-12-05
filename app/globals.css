@@ -3,9 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    @apply border-border;
-  }
   body {
     @apply bg-navy-dark text-white;
     font-family: 'Inter', 'IBM Plex Sans', 'SF Pro Display', system-ui, sans-serif;
