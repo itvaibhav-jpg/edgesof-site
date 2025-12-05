@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { HiArrowRight, HiCheckCircle } from 'react-icons/hi';
+import { FaRobot, FaCloud, FaChartBar, FaShieldAlt, FaBuilding, FaBolt, FaHospital, FaUniversity, FaTruck, FaShoppingCart, FaIndustry, FaMobileAlt } from 'react-icons/fa';
 
 export default function Home() {
   const stats = [
@@ -13,40 +15,40 @@ export default function Home() {
 
   const capabilities = [
     {
-      icon: '🤖',
+      icon: FaRobot,
       title: 'AI & Automation',
-      description: 'Intelligent automation powered by cutting-edge AI',
-      gradient: 'from-cyan-500 to-blue-600',
+      description: 'Intelligent automation powered by cutting-edge AI technology',
+      link: '/solutions#ai-automation',
     },
     {
-      icon: '☁️',
+      icon: FaCloud,
       title: 'Cloud Engineering',
-      description: 'Scalable cloud infrastructure and architecture',
-      gradient: 'from-blue-600 to-purple-600',
+      description: 'Scalable cloud infrastructure and modern architecture',
+      link: '/solutions#cloud',
     },
     {
-      icon: '📊',
+      icon: FaChartBar,
       title: 'Data & Analytics',
       description: 'Transform data into actionable business intelligence',
-      gradient: 'from-purple-600 to-pink-600',
+      link: '/solutions#data',
     },
     {
-      icon: '🔒',
+      icon: FaShieldAlt,
       title: 'Edge Computing & Security',
-      description: 'Enterprise-grade security and compliance',
-      gradient: 'from-pink-600 to-red-600',
+      description: 'Enterprise-grade security and compliance solutions',
+      link: '/solutions#security',
     },
     {
-      icon: '🏢',
+      icon: FaBuilding,
       title: 'Industry Solutions',
-      description: 'Tailored solutions for your specific industry',
-      gradient: 'from-red-600 to-orange-600',
+      description: 'Tailored solutions for your specific industry needs',
+      link: '/industries',
     },
     {
-      icon: '⚡',
+      icon: FaBolt,
       title: 'Specialized Services',
-      description: 'Expert consulting and strategic advisory',
-      gradient: 'from-orange-600 to-yellow-600',
+      description: 'Expert consulting and strategic technology advisory',
+      link: '/solutions#specialized',
     },
   ];
 
@@ -72,17 +74,26 @@ export default function Home() {
   ];
 
   const industries = [
-    { name: 'Healthcare', icon: '🏥' },
-    { name: 'Finance', icon: '💰' },
-    { name: 'Logistics', icon: '🚚' },
-    { name: 'Retail', icon: '🛍️' },
-    { name: 'Technology', icon: '💻' },
-    { name: 'Manufacturing', icon: '🏭' },
+    { name: 'Healthcare', icon: FaHospital },
+    { name: 'Finance', icon: FaUniversity },
+    { name: 'Logistics', icon: FaTruck },
+    { name: 'Retail', icon: FaShoppingCart },
+    { name: 'Manufacturing', icon: FaIndustry },
+    { name: 'Technology', icon: FaMobileAlt },
+  ];
+
+  const features = [
+    'AI-Powered Automation',
+    'Cloud-Native Architecture',
+    'Real-Time Analytics',
+    'Enterprise Security',
+    '24/7 Support',
+    'Scalable Solutions',
   ];
 
   return (
     <div className="relative overflow-hidden">
-      {/* Hero Section - Enhanced */}
+      {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-navy-dark via-navy-medium to-navy-dark">
         {/* Animated Background */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -95,35 +106,36 @@ export default function Home() {
           {/* Left Content */}
           <div className="space-y-8">
             <div className="inline-block">
-              <span className="px-4 py-2 bg-cyan-glow/10 border border-cyan-glow/30 rounded-full text-cyan-glow text-sm font-semibold">
-                🚀 Trusted by 50+ Global Enterprises
+              <span className="px-4 py-2 bg-cyan-glow/10 border border-cyan-glow/30 rounded-md text-cyan-glow text-sm font-semibold uppercase tracking-wide">
+                Trusted by 50+ Global Enterprises
               </span>
             </div>
             
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
-              <span className="text-white">Transform Your</span>
+              <span className="text-white">Enterprise Technology</span>
               <br />
-              <span className="text-gradient">Business Edge</span>
+              <span className="text-gradient">Redefined</span>
             </h1>
             
             <p className="text-xl text-gray-300 leading-relaxed">
-              Enterprise-grade AI automation, cloud engineering, and secure edge computing solutions 
-              that drive measurable business outcomes and sustainable competitive advantages.
+              We deliver enterprise-grade AI automation, cloud engineering, and secure edge computing 
+              solutions that drive measurable business outcomes and sustainable competitive advantages.
             </p>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              {stats.slice(0, 2).map((stat, index) => (
-                <div key={index} className="cyber-card p-4">
-                  <div className="text-3xl font-bold text-cyan-glow">{stat.value}</div>
-                  <div className="text-sm text-gray-400">{stat.label}</div>
+            {/* Key Features */}
+            <div className="grid grid-cols-2 gap-3">
+              {features.map((feature, index) => (
+                <div key={index} className="flex items-center gap-2">
+                  <HiCheckCircle className="w-5 h-5 text-cyan-glow flex-shrink-0" />
+                  <span className="text-sm text-gray-300">{feature}</span>
                 </div>
               ))}
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link href="/contact" className="btn-primary text-center">
+              <Link href="/contact" className="btn-primary text-center inline-flex items-center justify-center gap-2">
                 Schedule Consultation
+                <HiArrowRight className="w-5 h-5" />
               </Link>
               <Link href="/solutions" className="btn-secondary text-center">
                 Explore Solutions
@@ -142,22 +154,18 @@ export default function Home() {
                 priority
               />
             </div>
-            
-            {/* Floating Elements */}
-            <div className="absolute top-10 -left-10 w-24 h-24 border-2 border-cyan-glow/30 rounded-lg rotate-45 animate-float"></div>
-            <div className="absolute bottom-20 -right-10 w-20 h-20 border-2 border-aqua-bright/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
           </div>
         </div>
       </section>
 
       {/* Stats Bar */}
-      <section className="py-12 bg-navy-medium/50 border-y border-cyan-glow/10">
+      <section className="py-16 bg-navy-medium/50 border-y border-cyan-glow/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl font-bold text-gradient mb-2">{stat.value}</div>
-                <div className="text-gray-400">{stat.label}</div>
+                <div className="text-5xl font-bold text-gradient mb-2">{stat.value}</div>
+                <div className="text-gray-400 text-sm uppercase tracking-wide">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -165,9 +173,14 @@ export default function Home() {
       </section>
 
       {/* Core Capabilities */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
+            <div className="inline-block mb-4">
+              <span className="px-4 py-2 bg-cyan-glow/10 border border-cyan-glow/30 rounded-md text-cyan-glow text-sm font-semibold uppercase tracking-wide">
+                Our Expertise
+              </span>
+            </div>
             <h2 className="text-4xl sm:text-5xl font-bold mb-4">
               <span className="text-white">Enterprise </span>
               <span className="text-gradient">Capabilities</span>
@@ -178,53 +191,63 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {capabilities.map((capability, index) => (
-              <Link
-                key={index}
-                href="/solutions"
-                className="cyber-card p-8 hover:glow-border transition-all duration-300 group cursor-pointer"
-              >
-                <div className="text-6xl mb-4 group-hover:scale-110 transition-transform">
-                  {capability.icon}
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-glow transition-colors">
-                  {capability.title}
-                </h3>
-                <p className="text-gray-400 mb-4">
-                  {capability.description}
-                </p>
-                <div className="flex items-center text-cyan-glow text-sm font-semibold">
-                  Learn More
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </Link>
-            ))}
+            {capabilities.map((capability, index) => {
+              const Icon = capability.icon;
+              return (
+                <Link
+                  key={index}
+                  href={capability.link}
+                  className="cyber-card p-8 hover:glow-border transition-all duration-300 group cursor-pointer"
+                >
+                  <div className="w-16 h-16 bg-gradient-to-br from-cyan-glow/20 to-aqua-bright/20 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <Icon className="w-8 h-8 text-cyan-glow" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-glow transition-colors">
+                    {capability.title}
+                  </h3>
+                  <p className="text-gray-400 mb-4">
+                    {capability.description}
+                  </p>
+                  <div className="flex items-center text-cyan-glow text-sm font-semibold">
+                    Learn More
+                    <HiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* Industries Served */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-navy-medium/30">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-navy-medium/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">Industries We Serve</h2>
-            <p className="text-gray-300">Delivering specialized solutions across multiple sectors</p>
+            <h2 className="text-4xl font-bold text-white mb-4">Industries We Serve</h2>
+            <p className="text-gray-300 text-lg">Delivering specialized solutions across multiple sectors</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {industries.map((industry, index) => (
-              <div key={index} className="cyber-card p-6 text-center hover:glow-border transition-all">
-                <div className="text-4xl mb-2">{industry.icon}</div>
-                <div className="text-sm text-gray-300">{industry.name}</div>
-              </div>
-            ))}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {industries.map((industry, index) => {
+              const Icon = industry.icon;
+              return (
+                <Link
+                  key={index}
+                  href="/industries"
+                  className="cyber-card p-6 text-center hover:glow-border transition-all group"
+                >
+                  <div className="w-12 h-12 bg-gradient-to-br from-cyan-glow/20 to-aqua-bright/20 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+                    <Icon className="w-6 h-6 text-cyan-glow" />
+                  </div>
+                  <div className="text-sm text-gray-300 font-medium">{industry.name}</div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">
@@ -255,18 +278,19 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-cyan-glow/10 to-aqua-bright/10 border-y border-cyan-glow/20">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-cyan-glow/10 to-aqua-bright/10 border-y border-cyan-glow/20">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-4xl sm:text-5xl font-bold">
-            <span className="text-white">Ready to </span>
-            <span className="text-gradient">Transform Your Enterprise?</span>
+            <span className="text-white">Ready to Transform </span>
+            <span className="text-gradient">Your Enterprise?</span>
           </h2>
           <p className="text-xl text-gray-300">
             Join 50+ global enterprises leveraging our AI and cloud technology for unprecedented growth
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="btn-primary inline-block">
+            <Link href="/contact" className="btn-primary inline-flex items-center justify-center gap-2">
               Schedule Free Consultation
+              <HiArrowRight className="w-5 h-5" />
             </Link>
             <Link href="/products" className="btn-secondary inline-block">
               View Our Products
