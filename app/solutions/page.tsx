@@ -1,11 +1,14 @@
 'use client';
 
+import { FaRobot, FaCloud, FaChartBar, FaShieldAlt, FaBuilding, FaBolt } from 'react-icons/fa';
+import { HiCheckCircle } from 'react-icons/hi';
+
 export default function Solutions() {
   const solutions = [
     {
+      id: 'ai-automation',
       category: 'AI & Automation',
-      icon: '🤖',
-      gradient: 'from-cyan-500 to-blue-600',
+      icon: FaRobot,
       description: 'Intelligent automation solutions powered by cutting-edge AI technology',
       services: [
         {
@@ -31,9 +34,9 @@ export default function Solutions() {
       ],
     },
     {
+      id: 'cloud',
       category: 'Cloud Engineering',
-      icon: '☁️',
-      gradient: 'from-blue-600 to-purple-600',
+      icon: FaCloud,
       description: 'Scalable, secure, and high-performance cloud infrastructure solutions',
       services: [
         {
@@ -59,9 +62,9 @@ export default function Solutions() {
       ],
     },
     {
+      id: 'data',
       category: 'Data & Analytics',
-      icon: '📊',
-      gradient: 'from-purple-600 to-pink-600',
+      icon: FaChartBar,
       description: 'Transform raw data into actionable business intelligence',
       services: [
         {
@@ -83,9 +86,9 @@ export default function Solutions() {
       ],
     },
     {
+      id: 'security',
       category: 'Edge Computing & Security',
-      icon: '🔒',
-      gradient: 'from-pink-600 to-red-600',
+      icon: FaShieldAlt,
       description: 'Enterprise-grade security and compliance solutions',
       services: [
         {
@@ -107,9 +110,9 @@ export default function Solutions() {
       ],
     },
     {
+      id: 'industry',
       category: 'Industry Solutions',
-      icon: '🏢',
-      gradient: 'from-red-600 to-orange-600',
+      icon: FaBuilding,
       description: 'Specialized solutions tailored for specific industries',
       services: [
         {
@@ -135,9 +138,9 @@ export default function Solutions() {
       ],
     },
     {
+      id: 'specialized',
       category: 'Specialized Services',
-      icon: '⚡',
-      gradient: 'from-orange-600 to-yellow-600',
+      icon: FaBolt,
       description: 'Expert consulting and strategic technology services',
       services: [
         {
@@ -162,8 +165,8 @@ export default function Solutions() {
         {/* Header */}
         <div className="text-center mb-16 space-y-6">
           <div className="inline-block">
-            <span className="px-4 py-2 bg-cyan-glow/10 border border-cyan-glow/30 rounded-full text-cyan-glow text-sm font-semibold">
-              🎯 Comprehensive Enterprise Solutions
+            <span className="px-4 py-2 bg-cyan-glow/10 border border-cyan-glow/30 rounded-md text-cyan-glow text-sm font-semibold uppercase tracking-wide">
+              Comprehensive Enterprise Solutions
             </span>
           </div>
           <h1 className="text-5xl sm:text-6xl font-bold">
@@ -178,59 +181,53 @@ export default function Solutions() {
 
         {/* Solutions Grid */}
         <div className="space-y-16">
-          {solutions.map((solution, index) => (
-            <div
-              key={index}
-              className="cyber-card p-8 lg:p-12 hover:glow-border transition-all duration-300"
-            >
-              {/* Category Header */}
-              <div className="flex items-start gap-6 mb-8">
-                <div className="text-7xl">{solution.icon}</div>
-                <div className="flex-1">
-                  <h2 className="text-4xl font-bold text-white mb-3">
-                    {solution.category}
-                  </h2>
-                  <p className="text-lg text-gray-300">
-                    {solution.description}
-                  </p>
+          {solutions.map((solution, index) => {
+            const Icon = solution.icon;
+            return (
+              <div
+                key={index}
+                id={solution.id}
+                className="cyber-card p-8 lg:p-12 hover:glow-border transition-all duration-300"
+              >
+                {/* Category Header */}
+                <div className="flex items-start gap-6 mb-8">
+                  <div className="w-20 h-20 bg-gradient-to-br from-cyan-glow/20 to-aqua-bright/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Icon className="w-10 h-10 text-cyan-glow" />
+                  </div>
+                  <div className="flex-1">
+                    <h2 className="text-4xl font-bold text-white mb-3">
+                      {solution.category}
+                    </h2>
+                    <p className="text-lg text-gray-300">
+                      {solution.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
 
-              {/* Services Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {solution.services.map((service, idx) => (
-                  <div
-                    key={idx}
-                    className="bg-navy-dark/50 border border-cyan-glow/10 rounded-lg p-6 hover:border-cyan-glow/30 transition-all group"
-                  >
-                    <div className="flex items-start gap-3">
-                      <svg
-                        className="w-6 h-6 text-cyan-glow flex-shrink-0 mt-1 group-hover:scale-110 transition-transform"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                      <div>
-                        <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-cyan-glow transition-colors">
-                          {service.name}
-                        </h3>
-                        <p className="text-sm text-gray-400">
-                          {service.description}
-                        </p>
+                {/* Services Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {solution.services.map((service, idx) => (
+                    <div
+                      key={idx}
+                      className="bg-navy-dark/50 border border-cyan-glow/10 rounded-lg p-6 hover:border-cyan-glow/30 transition-all group"
+                    >
+                      <div className="flex items-start gap-3">
+                        <HiCheckCircle className="w-6 h-6 text-cyan-glow flex-shrink-0 mt-1 group-hover:scale-110 transition-transform" />
+                        <div>
+                          <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-cyan-glow transition-colors">
+                            {service.name}
+                          </h3>
+                          <p className="text-sm text-gray-400">
+                            {service.description}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* CTA Section */}
