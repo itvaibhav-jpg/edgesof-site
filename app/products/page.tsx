@@ -1,5 +1,8 @@
 'use client';
 
+import { FaBolt, FaCloud, FaHospital, FaMobileAlt, FaChartLine, FaShieldAlt, FaHeadset, FaPlug, FaChartBar, FaTag } from 'react-icons/fa';
+import { HiCheckCircle } from 'react-icons/hi';
+
 export default function Products() {
   const products = [
     {
@@ -17,8 +20,7 @@ export default function Products() {
         'Multi-language support',
       ],
       pricing: 'Starting at $999/month',
-      icon: '⚡',
-      color: 'cyan',
+      icon: FaBolt,
       badge: 'Most Popular',
     },
     {
@@ -36,8 +38,7 @@ export default function Products() {
         'Disaster recovery and backup',
       ],
       pricing: 'Starting at $1,499/month',
-      icon: '☁️',
-      color: 'blue',
+      icon: FaCloud,
       badge: 'Enterprise Choice',
     },
     {
@@ -55,8 +56,7 @@ export default function Products() {
         'HIPAA compliant infrastructure',
       ],
       pricing: 'Starting at $799/month',
-      icon: '🏥',
-      color: 'green',
+      icon: FaHospital,
       badge: 'Healthcare Certified',
     },
     {
@@ -74,8 +74,7 @@ export default function Products() {
         'Custom reporting and dashboards',
       ],
       pricing: 'Starting at $499/month',
-      icon: '📱',
-      color: 'purple',
+      icon: FaMobileAlt,
       badge: 'Best Value',
     },
     {
@@ -93,8 +92,7 @@ export default function Products() {
         'White-label options available',
       ],
       pricing: 'Starting at $699/month',
-      icon: '📊',
-      color: 'pink',
+      icon: FaChartLine,
       badge: 'Analytics Leader',
     },
     {
@@ -112,17 +110,16 @@ export default function Products() {
         'Penetration testing tools',
       ],
       pricing: 'Custom Enterprise Pricing',
-      icon: '🔒',
-      color: 'red',
+      icon: FaShieldAlt,
       badge: 'Security First',
     },
   ];
 
   const addons = [
-    { name: 'Dedicated Support', price: '$299/month', icon: '🎧' },
-    { name: 'Custom Integrations', price: '$499/month', icon: '🔌' },
-    { name: 'Advanced Analytics', price: '$399/month', icon: '📈' },
-    { name: 'White Label', price: '$799/month', icon: '🏷️' },
+    { name: 'Dedicated Support', price: '$299/month', icon: FaHeadset },
+    { name: 'Custom Integrations', price: '$499/month', icon: FaPlug },
+    { name: 'Advanced Analytics', price: '$399/month', icon: FaChartBar },
+    { name: 'White Label', price: '$799/month', icon: FaTag },
   ];
 
   return (
@@ -131,8 +128,8 @@ export default function Products() {
         {/* Header */}
         <div className="text-center mb-16 space-y-6">
           <div className="inline-block">
-            <span className="px-4 py-2 bg-cyan-glow/10 border border-cyan-glow/30 rounded-full text-cyan-glow text-sm font-semibold">
-              🚀 Enterprise-Grade Products
+            <span className="px-4 py-2 bg-cyan-glow/10 border border-cyan-glow/30 rounded-md text-cyan-glow text-sm font-semibold uppercase tracking-wide">
+              Enterprise-Grade Products
             </span>
           </div>
           <h1 className="text-5xl sm:text-6xl font-bold">
@@ -147,84 +144,77 @@ export default function Products() {
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-          {products.map((product, index) => (
-            <div
-              key={index}
-              className="cyber-card p-8 hover:glow-border transition-all duration-300 flex flex-col relative"
-            >
-              {/* Badge */}
-              {product.badge && (
-                <div className="absolute top-4 right-4">
-                  <span className="px-3 py-1 bg-gradient-to-r from-cyan-glow to-aqua-bright text-navy-dark text-xs font-bold rounded-full">
-                    {product.badge}
-                  </span>
-                </div>
-              )}
+          {products.map((product, index) => {
+            const Icon = product.icon;
+            return (
+              <div
+                key={index}
+                className="cyber-card p-8 hover:glow-border transition-all duration-300 flex flex-col relative"
+              >
+                {/* Badge */}
+                {product.badge && (
+                  <div className="absolute top-4 right-4">
+                    <span className="px-3 py-1 bg-gradient-to-r from-cyan-glow to-aqua-bright text-navy-dark text-xs font-bold rounded-full">
+                      {product.badge}
+                    </span>
+                  </div>
+                )}
 
-              {/* Product Header */}
-              <div className="mb-6">
-                <div className="text-6xl mb-4">{product.icon}</div>
-                <h2 className="text-3xl font-bold text-white mb-2">
-                  {product.name}
-                </h2>
-                <p className="text-cyan-glow font-semibold mb-4">
-                  {product.tagline}
-                </p>
-                <p className="text-gray-400 mb-4">
-                  {product.description}
-                </p>
-                <div className="text-2xl font-bold text-gradient">
-                  {product.pricing}
+                {/* Product Header */}
+                <div className="mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-cyan-glow/20 to-aqua-bright/20 rounded-xl flex items-center justify-center mb-4">
+                    <Icon className="w-8 h-8 text-cyan-glow" />
+                  </div>
+                  <h2 className="text-3xl font-bold text-white mb-2">
+                    {product.name}
+                  </h2>
+                  <p className="text-cyan-glow font-semibold mb-4">
+                    {product.tagline}
+                  </p>
+                  <p className="text-gray-400 mb-4">
+                    {product.description}
+                  </p>
+                  <div className="text-2xl font-bold text-gradient">
+                    {product.pricing}
+                  </div>
                 </div>
-              </div>
 
-              {/* Features */}
-              <div className="flex-grow mb-6">
-                <h3 className="text-lg font-semibold text-white mb-4">
-                  Key Features
-                </h3>
-                <ul className="space-y-3">
-                  {product.features.map((feature, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-start gap-3 text-gray-300 text-sm"
-                    >
-                      <svg
-                        className="w-5 h-5 text-cyan-glow flex-shrink-0 mt-0.5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                {/* Features */}
+                <div className="flex-grow mb-6">
+                  <h3 className="text-lg font-semibold text-white mb-4">
+                    Key Features
+                  </h3>
+                  <ul className="space-y-3">
+                    {product.features.map((feature, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-start gap-3 text-gray-300 text-sm"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                        <HiCheckCircle className="w-5 h-5 text-cyan-glow flex-shrink-0 mt-0.5" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-3">
-                <a
-                  href="/contact"
-                  className="btn-primary text-center flex-1"
-                >
-                  Request Demo
-                </a>
-                <a
-                  href="/contact"
-                  className="btn-secondary text-center flex-1"
-                >
-                  Get Pricing
-                </a>
+                {/* CTAs */}
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a
+                    href="/contact"
+                    className="btn-primary text-center flex-1"
+                  >
+                    Request Demo
+                  </a>
+                  <a
+                    href="/contact"
+                    className="btn-secondary text-center flex-1"
+                  >
+                    Get Pricing
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Add-ons Section */}
@@ -233,18 +223,23 @@ export default function Products() {
             Premium Add-ons
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {addons.map((addon, index) => (
-              <div
-                key={index}
-                className="bg-navy-dark/50 border border-cyan-glow/10 rounded-lg p-6 text-center hover:border-cyan-glow/30 transition-all"
-              >
-                <div className="text-4xl mb-3">{addon.icon}</div>
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  {addon.name}
-                </h3>
-                <div className="text-cyan-glow font-bold">{addon.price}</div>
-              </div>
-            ))}
+            {addons.map((addon, index) => {
+              const Icon = addon.icon;
+              return (
+                <div
+                  key={index}
+                  className="bg-navy-dark/50 border border-cyan-glow/10 rounded-lg p-6 text-center hover:border-cyan-glow/30 transition-all group"
+                >
+                  <div className="w-12 h-12 bg-gradient-to-br from-cyan-glow/20 to-aqua-bright/20 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+                    <Icon className="w-6 h-6 text-cyan-glow" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">
+                    {addon.name}
+                  </h3>
+                  <div className="text-cyan-glow font-bold">{addon.price}</div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
