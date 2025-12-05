@@ -23,9 +23,10 @@ export default function Navbar() {
     },
     { name: 'Products', href: '/products' },
     { name: 'Industries', href: '/industries' },
+    { name: 'Pricing', href: '/pricing' },
     { name: 'Insights', href: '/insights' },
     { name: 'Careers', href: '/careers' },
-    { name: 'About', href: '/about' },
+    { name: 'FAQ', href: '/faq' },
   ];
 
   return (
