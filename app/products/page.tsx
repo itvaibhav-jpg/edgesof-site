@@ -4,92 +4,144 @@ export default function Products() {
   const products = [
     {
       name: 'EdgeFlow AI',
-      tagline: 'AI Workflow & Automation Engine',
-      description: 'Intelligent automation platform that streamlines business processes with AI-powered workflows, document processing, and predictive analytics.',
+      tagline: 'Enterprise AI Workflow & Automation Engine',
+      description: 'Intelligent automation platform that streamlines business processes with AI-powered workflows, document processing, and predictive analytics. Built for enterprise scale with 99.9% uptime SLA.',
       features: [
-        'Visual workflow builder',
-        'AI-powered automation',
-        'Document intelligence',
-        'Integration with 100+ apps',
-        'Real-time monitoring',
-        'Custom AI agents',
+        'Visual workflow builder with drag-and-drop interface',
+        'AI-powered automation with machine learning',
+        'Document intelligence (OCR + NLP)',
+        'Integration with 100+ enterprise apps',
+        'Real-time monitoring and analytics',
+        'Custom AI agents and chatbots',
+        'WhatsApp Business API integration',
+        'Multi-language support',
       ],
+      pricing: 'Starting at $999/month',
       icon: '⚡',
       color: 'cyan',
+      badge: 'Most Popular',
     },
     {
       name: 'EdgeCloud OS',
-      tagline: 'Cloud Infrastructure Orchestration',
-      description: 'Complete cloud orchestration system for managing multi-cloud infrastructure, deployments, and scaling with intelligent resource optimization.',
+      tagline: 'Cloud Infrastructure Orchestration Platform',
+      description: 'Complete cloud orchestration system for managing multi-cloud infrastructure, deployments, and scaling with intelligent resource optimization. Enterprise-grade security and compliance built-in.',
       features: [
-        'Multi-cloud management',
-        'Auto-scaling & load balancing',
-        'Container orchestration',
-        'CI/CD pipelines',
-        'Infrastructure as code',
-        'Cost optimization',
+        'Multi-cloud management (AWS, Azure, GCP)',
+        'Auto-scaling & intelligent load balancing',
+        'Container orchestration (Kubernetes)',
+        'CI/CD pipelines with GitOps',
+        'Infrastructure as Code (Terraform, Pulumi)',
+        'Cost optimization and forecasting',
+        'Security scanning and compliance',
+        'Disaster recovery and backup',
       ],
+      pricing: 'Starting at $1,499/month',
       icon: '☁️',
       color: 'blue',
+      badge: 'Enterprise Choice',
     },
     {
       name: 'EdgeHealth EMR',
-      tagline: 'Complete Healthcare Management',
-      description: 'Comprehensive EMR, clinic management, and billing platform designed for modern healthcare providers with AI-assisted diagnostics.',
+      tagline: 'Complete Healthcare Management Platform',
+      description: 'Comprehensive EMR, clinic management, and billing platform designed for modern healthcare providers with AI-assisted diagnostics, telemedicine, and complete HIPAA compliance.',
       features: [
-        'Electronic medical records',
-        'Patient management',
-        'Appointment scheduling',
-        'Billing & insurance',
+        'Electronic medical records (EMR/EHR)',
+        'Patient management and scheduling',
+        'Appointment booking system',
+        'Billing & insurance claims',
         'Telemedicine integration',
         'AI diagnostic assistance',
+        'Prescription management',
+        'HIPAA compliant infrastructure',
       ],
+      pricing: 'Starting at $799/month',
       icon: '🏥',
       color: 'green',
+      badge: 'Healthcare Certified',
     },
     {
-      name: 'EdgeCRM Mini',
-      tagline: 'Lightweight CRM/ERP for SMEs',
-      description: 'Powerful yet simple CRM and ERP solution tailored for small and medium enterprises with essential business management tools.',
+      name: 'EdgeCRM Pro',
+      tagline: 'Intelligent CRM/ERP for Growing Businesses',
+      description: 'Powerful yet intuitive CRM and ERP solution tailored for SMEs and growing enterprises. Includes sales automation, inventory management, and AI-powered insights.',
       features: [
-        'Contact & lead management',
-        'Sales pipeline tracking',
-        'Inventory management',
-        'Invoice & billing',
-        'Team collaboration',
-        'Mobile apps',
+        'Contact & lead management with AI scoring',
+        'Sales pipeline tracking and forecasting',
+        'Inventory management and tracking',
+        'Invoice & billing automation',
+        'Team collaboration tools',
+        'Mobile apps (iOS & Android)',
+        'Email marketing automation',
+        'Custom reporting and dashboards',
       ],
+      pricing: 'Starting at $499/month',
       icon: '📱',
       color: 'purple',
+      badge: 'Best Value',
     },
     {
-      name: 'EdgeDashboard',
-      tagline: 'Real-Time Business Intelligence',
-      description: 'Advanced analytics and visualization platform that transforms your data into actionable insights with AI-powered predictions.',
+      name: 'EdgeDashboard Pro',
+      tagline: 'Real-Time Business Intelligence Platform',
+      description: 'Advanced analytics and visualization platform that transforms your data into actionable insights with AI-powered predictions, custom dashboards, and automated reporting.',
       features: [
-        'Custom dashboards',
-        'Real-time analytics',
-        'Predictive insights',
-        'Data visualization',
-        'Automated reports',
-        'Multi-source integration',
+        'Custom interactive dashboards',
+        'Real-time analytics and monitoring',
+        'Predictive insights with ML',
+        'Advanced data visualization',
+        'Automated report generation',
+        'Multi-source data integration',
+        'Alerts and notifications',
+        'White-label options available',
       ],
+      pricing: 'Starting at $699/month',
       icon: '📊',
       color: 'pink',
+      badge: 'Analytics Leader',
     },
+    {
+      name: 'EdgeSecure',
+      tagline: 'Zero-Trust Security & Compliance Platform',
+      description: 'Enterprise-grade security platform with zero-trust architecture, identity management, API security, and comprehensive compliance monitoring for regulated industries.',
+      features: [
+        'Zero-trust network architecture',
+        'Identity & access management (IAM)',
+        'Single sign-on (SSO) and MFA',
+        'API security and rate limiting',
+        'Compliance monitoring (SOC 2, GDPR, HIPAA)',
+        'Threat detection and response',
+        'Security audit logs',
+        'Penetration testing tools',
+      ],
+      pricing: 'Custom Enterprise Pricing',
+      icon: '🔒',
+      color: 'red',
+      badge: 'Security First',
+    },
+  ];
+
+  const addons = [
+    { name: 'Dedicated Support', price: '$299/month', icon: '🎧' },
+    { name: 'Custom Integrations', price: '$499/month', icon: '🔌' },
+    { name: 'Advanced Analytics', price: '$399/month', icon: '📈' },
+    { name: 'White Label', price: '$799/month', icon: '🏷️' },
   ];
 
   return (
     <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16 space-y-4">
+        <div className="text-center mb-16 space-y-6">
+          <div className="inline-block">
+            <span className="px-4 py-2 bg-cyan-glow/10 border border-cyan-glow/30 rounded-full text-cyan-glow text-sm font-semibold">
+              🚀 Enterprise-Grade Products
+            </span>
+          </div>
           <h1 className="text-5xl sm:text-6xl font-bold">
             <span className="text-white">Our </span>
             <span className="text-gradient">Products</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Enterprise-grade products built with cutting-edge AI and cloud technology
+            Production-ready platforms built with cutting-edge AI and cloud technology. 
+            Trusted by 50+ enterprises worldwide.
           </p>
         </div>
 
@@ -98,32 +150,44 @@ export default function Products() {
           {products.map((product, index) => (
             <div
               key={index}
-              className="cyber-card p-8 hover:glow-border transition-all duration-300 flex flex-col"
+              className="cyber-card p-8 hover:glow-border transition-all duration-300 flex flex-col relative"
             >
+              {/* Badge */}
+              {product.badge && (
+                <div className="absolute top-4 right-4">
+                  <span className="px-3 py-1 bg-gradient-to-r from-cyan-glow to-aqua-bright text-navy-dark text-xs font-bold rounded-full">
+                    {product.badge}
+                  </span>
+                </div>
+              )}
+
               {/* Product Header */}
               <div className="mb-6">
-                <div className="text-5xl mb-4">{product.icon}</div>
+                <div className="text-6xl mb-4">{product.icon}</div>
                 <h2 className="text-3xl font-bold text-white mb-2">
                   {product.name}
                 </h2>
                 <p className="text-cyan-glow font-semibold mb-4">
                   {product.tagline}
                 </p>
-                <p className="text-gray-400">
+                <p className="text-gray-400 mb-4">
                   {product.description}
                 </p>
+                <div className="text-2xl font-bold text-gradient">
+                  {product.pricing}
+                </div>
               </div>
 
               {/* Features */}
-              <div className="flex-grow">
+              <div className="flex-grow mb-6">
                 <h3 className="text-lg font-semibold text-white mb-4">
                   Key Features
                 </h3>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {product.features.map((feature, idx) => (
                     <li
                       key={idx}
-                      className="flex items-start space-x-3 text-gray-300 text-sm"
+                      className="flex items-start gap-3 text-gray-300 text-sm"
                     >
                       <svg
                         className="w-5 h-5 text-cyan-glow flex-shrink-0 mt-0.5"
@@ -144,30 +208,83 @@ export default function Products() {
                 </ul>
               </div>
 
-              {/* CTA */}
-              <div className="mt-6">
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row gap-3">
                 <a
                   href="/contact"
-                  className="btn-secondary w-full text-center block"
+                  className="btn-primary text-center flex-1"
                 >
                   Request Demo
+                </a>
+                <a
+                  href="/contact"
+                  className="btn-secondary text-center flex-1"
+                >
+                  Get Pricing
                 </a>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center space-y-6 cyber-card p-12">
-          <h2 className="text-3xl font-bold text-white">
-            Need a Custom Solution?
+        {/* Add-ons Section */}
+        <div className="cyber-card p-8 mb-16">
+          <h2 className="text-3xl font-bold text-white mb-6 text-center">
+            Premium Add-ons
           </h2>
-          <p className="text-gray-300 text-lg">
-            We build tailored products for unique enterprise requirements
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {addons.map((addon, index) => (
+              <div
+                key={index}
+                className="bg-navy-dark/50 border border-cyan-glow/10 rounded-lg p-6 text-center hover:border-cyan-glow/30 transition-all"
+              >
+                <div className="text-4xl mb-3">{addon.icon}</div>
+                <h3 className="text-lg font-semibold text-white mb-2">
+                  {addon.name}
+                </h3>
+                <div className="text-cyan-glow font-bold">{addon.price}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Enterprise Section */}
+        <div className="text-center space-y-6 cyber-card p-12 bg-gradient-to-r from-cyan-glow/5 to-aqua-bright/5">
+          <h2 className="text-4xl font-bold text-white">
+            Need a Custom Enterprise Solution?
+          </h2>
+          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+            We build tailored products for unique enterprise requirements with dedicated support, 
+            custom SLAs, and white-label options.
           </p>
-          <a href="/contact" className="btn-primary inline-block">
-            Discuss Your Project
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+            <a href="/contact" className="btn-primary">
+              Discuss Your Project
+            </a>
+            <a href="/solutions" className="btn-secondary">
+              View All Solutions
+            </a>
+          </div>
+        </div>
+
+        {/* Trust Indicators */}
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="text-center cyber-card p-6">
+            <div className="text-3xl font-bold text-gradient mb-2">99.9%</div>
+            <div className="text-sm text-gray-400">Uptime SLA</div>
+          </div>
+          <div className="text-center cyber-card p-6">
+            <div className="text-3xl font-bold text-gradient mb-2">24/7</div>
+            <div className="text-sm text-gray-400">Support Available</div>
+          </div>
+          <div className="text-center cyber-card p-6">
+            <div className="text-3xl font-bold text-gradient mb-2">SOC 2</div>
+            <div className="text-sm text-gray-400">Certified</div>
+          </div>
+          <div className="text-center cyber-card p-6">
+            <div className="text-3xl font-bold text-gradient mb-2">50+</div>
+            <div className="text-sm text-gray-400">Enterprise Clients</div>
+          </div>
         </div>
       </div>
     </div>
